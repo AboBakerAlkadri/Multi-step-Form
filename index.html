@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج متعدد الخطوات</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- === Google Fonta === -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- === Sidebar Start === -->
+
+    <div class="side-bar">    
+      <div class="steps">
+        <div class="step1">
+          <h2 class="number step-indicator">1</h2>
+          <div class="steps-heading">
+            <p>الخطوة 1</p>
+            <h3>معلوماتك</h3>
+          </div>
+        </div>
+        <div class="step2">
+          <h2 class="number step-indicator">2</h2>
+          <div class="steps-heading">
+            <p>الخطوة 2</p>
+            <h3>اختر الخطة</h3>
+          </div>
+        </div>
+        <div class="step3">
+          <h2 class="number step-indicator">3</h2>
+          <div class="steps-heading">
+            <p>الخطوة 3</p>
+            <h3>إضافات</h3>
+          </div>
+        </div>
+        <div class="step4">
+          <h2 class="number step-indicator">4</h2>
+          <div class="steps-heading">
+            <p>الخطوة 4</p>
+            <h3>الخلاصة</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- === Sidebar End === -->
+
+    <!-- === Form Start === -->
+    
+    <div class="left-form">
+        <div class="form-step" index="1">
+          <div class="form-input-1">
+            <h1 class="form-title">معلومات شخصية</h1>
+            <p class="step-desc"> رجاء اكتب اسمك, بريدك الإلكتروني ورقم هاتفك</p>
+            <form class="user-input">
+              <legend>الإسم</legend>
+              <input type="text" placeholder="e.g. Stephen King" required>
+              <legend>البريد الإلكتروني</legend>
+              <input type="email" placeholder="e.g. stephenking@lorem.com" required>
+              <legend>رقم الهاتف</legend>
+              <input type="tel" placeholder="e.g. +1 234 567 890" name="phone" required>
+            </form>
+          </div>
+        </div>
+        <div class="form-step" index="2" id="form-step-2">
+          <div class="form-input-2">
+            <h1 class="form-title">اختر خطتك</h1>
+            <p class="step-desc"> لديك خيار الفواتير الشهرية أو السنوية</p>
+            <div class="plans">
+              <div class="plan" data-name="arcade">
+                <img src="Images/arcade-icon.jpg" alt="arcade-icon" class="plan-img">
+                <h4 class="plan-name">Arcade</h4>
+                <p class="plan-desc">$9<span class="yearly-desc">0</span>/<span class="yr">شهر</span></p>
+                <span class="yearly-plan">2 أشهر مجانا</span>
+              </div>
+              <div class="plan" data-name="advanced">
+                <img src="Images/advanced-icon.png" alt="advance-icon" class="plan-img">
+                <h4 class="plan-name">Advanced</h4>
+                <p class="plan-desc"> $12<span class="yearly-desc">0</span>/<span class="yr">شهر</span>
+                </p>
+                <span class="yearly-plan">2 أشهر مجانا</span>
+              </div>
+              <div class="plan pro" data-name="pro">
+                <img src="Images/pro-icon.png" alt="pro-icon" class="plan-img">
+                <h4 class="plan-name">Pro</h4>
+                <p class="plan-desc"> $15<span class="yearly-desc">0</span>/<span class="yr">شهر</span>
+                </p>
+                <span class="yearly-plan">2 أشهر مجانا</span>
+              </div>
+            </div>
+            <section id="Toggle-Dark-Mode" class="panel-element">
+              <div class="toggle-contents-wrapper">
+                <p class="monthly-subscription">شهري</p>
+                <div id="Dark-Mode-Switch" class="toggle-wrapper">
+                  <div class="toggle-dot"></div>
+                </div>
+                <p class="yearly-subscription">سنوي</p>
+              </div>
+            </section>
+          </div>
+  
+  
+        </div>
+        <div class="form-step" index="3">
+          <h1 class="form-title"> اختر الإضافات</h1>
+          <p class="step-desc"> تساعد الوظائف الإضافية على تحسين تجربة الألعاب الخاصة بك</p>
+          <div class="add-on-options">
+            <div class="option1 opts">
+              <input type="checkbox" onclick=checkAddOns()>
+              <label class="container1">
+                <h3>خدمة الإنترنت</h3>
+                <p class="des">الوصول إلى ألعاب متعددة اللاعبين</p>
+              </label>
+              <p class="option-price">+$1<span class="yearly-description">0</span>/<span class="yr">شهر</span></p>
+            </div>
+            <div class="option2 opts">
+              <input type="checkbox" onclick=checkAddOns()>
+              <label class="container1">
+                <h3>تخزين أكبر</h3>
+                <p class="des">1 تيرابايت إضافي من الحفظ السحابي</p>
+              </label>
+              <p class="option-price">+$2<span class="yearly-description">0</span>/<span class="yr">شهر</span></p>
+            </div>
+            <div class="option3 opts">
+              <input type="checkbox" onclick=checkAddOns()>
+              <label class="container1">
+                <h3>ملف تعريف قابل للتخصيص</h3>
+                <p class="des">ثيم مخصص في ملفك الشخصي</p>
+              </label>
+              <p class="option-price">+$2<span class="yearly-description">0</span>/<span class="yr">شهر</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="form-step" index="4">
+          <h1 class="form-title"> الانتهاء</h1>
+          <p class="step-desc"> تحقق جيدًا من أن كل شيء يبدو جيدًا قبل التأكيد</p>
+          <div class="user-selection">
+            <div class="final-box">
+              <div class="user-plan">
+                <div class="user-plan-flex">
+                  <h3 class="plan-selected">Arcade(<span class="duration">شهري</span>)</h3>
+                  <a href="#form-step-2">غير الخطة</a>
+                </div>
+                <h3 class="final-plan-price">$9/شهر</h3>
+              </div>
+              <div class="user-selected-add-ons">
+                <div class="add-on-1">
+                  <p class="add-on-1 light">لا إضافات</p>
+                  <p class="add-on-price"></p>
+                </div>
+              </div>
+            </div>
+            <div class="final-price">
+              <p class="total1 light">المجموع(<span class="yr">شهر</span>)</p>
+              <p class="total">$12/<span class="duration final">شهر</span></p>
+            </div>
+  
+          </div>
+        </div>
+  
+        <div class="form-step" index="5">
+          <div class="thanks">
+            <img src="Images/tick-mark.jpg" alt="thanks">
+            <h1>شكرا !</h1>
+            <p>
+                شكرا لتأكيد اشتراكك! نأمل أن تستمتع
+                باستخدام منصتنا. إذا كنت بحاجة إلى الدعم في أي وقت، فلا تتردد
+                لمراسلتنا عبر البريد الإلكتروني على support@loremgaming.com
+            </p>
+          </div>
+        </div>
+  
+        <div class="buttons">
+  
+          <button class="go-back-button"> ارجع إلى الخلف
+          </button>
+          <button class="next-step">الخطوة التالية</button>
+        </div>
+      </div>
+
+      <!-- === Form End === -->
+
+      <!-- Connect Javascript -->
+
+      <script src="script.js"></script>
+    
+</body>
+</html>
